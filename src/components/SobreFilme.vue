@@ -11,7 +11,7 @@ let pagination = []
 
 const options = {
     method: "GET",
-    headers: { accept: "application/json", Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMGQ4NWU1OWE1YTQwZDU1ZGJjY2JmMDkxZGE3NDJkOCIsIm5iZiI6MTc5MDgyNjUyMC41MzEwMDAxLCJzdWIiOiI2YWJkZDgxODdhY2IyNGEwYWI4Zjk3MTkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.JA5U3wEerkXBSlFDnX9tzGmcOlgHjhBpb_iakqLQ7ew" }
+    headers: { accept: "application/json", Authorization: import.meta.env.VITE_TMDB_API_KEY}
 };
 const listaFilmes = async (reqPage = page.value) => {
     const res = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=pt-BR&page=${reqPage}&sort_by=popularity.desc`, options);
